@@ -20,7 +20,8 @@ import java.util.Date;
 public class InsertDocument {
     public static void main(String[] args) {
         // DB Connection
-        ConnectionString connectionString = new ConnectionString("mongodb+srv://rupesh:Password12345@testcluster.uldqq9y.mongodb.net/?retryWrites=true&w=majority");
+        ConnString CS = new ConnString();
+        ConnectionString connectionString = new ConnectionString(CS.connectionString);
         MongoClientSettings settings = MongoClientSettings.builder()
                 .applyConnectionString(connectionString)
                 .serverApi(ServerApi.builder()
